@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>UPL Betting Cabinet</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>UPL Betting Cabinet</h1>
+
+    <div id="auth">
+        <input type="text" id="username" placeholder="Ім'я користувача">
+        <button class="btn" onclick="register()">Зареєструватися</button>
+        <button class="btn" onclick="login()">Увійти</button>
+    </div>
+
+    <div id="dashboard" style="display:none;">
+        <div class="header">
+            <h2>Привіт, <span id="user-name"></span></h2>
+            <p>Баланс: <span id="balance">0</span> грн</p>
+            <button class="btn small" onclick="logout()">Вийти</button>
+        </div>
+
+        <div class="menu">
+            <button class="tab-btn" onclick="showTab('promotions')">Акції</button>
+            <button class="tab-btn" onclick="showTab('profile')">Персональні дані</button>
+            <button class="tab-btn" onclick="showTab('verify')">Підтвердження акаунта</button>
+            <button class="tab-btn" onclick="showTab('payments')">Історія платежів</button>
+            <button class="tab-btn" onclick="showTab('bets')">Мої ставки</button>
+        </div>
+
+        <div id="tabs">
+            <div id="promotions" class="tab-content">
+                <h3>Акції</h3>
+                <div>💰 Бонус 10% на першу ставку!</div>
+                <div>🎁 Щотижневий турнір серед гравців!</div>
+            </div>
+            <div id="profile" class="tab-content">
+                <h3>Персональні дані</h3>
+                <p>Ім'я: <span id="profile-name"></span></p>
+            </div>
+            <div id="verify" class="tab-content">
+                <h3>Підтвердження акаунта</h3>
+                <p>Підтвердьте email та номер телефону</p>
+            </div>
+            <div id="payments" class="tab-content">
+                <h3>Історія платежів</h3>
+                <ul id="payment-history"></ul>
+            </div>
+            <div id="bets" class="tab-content">
+                <h3>Мої ставки</h3>
+                <div id="events" class="events"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
